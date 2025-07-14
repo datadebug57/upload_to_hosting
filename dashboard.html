@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #111; color: white; text-align: center; padding: 20px; }
+    .card { background: #222; max-width: 400px; margin: auto; padding: 20px; border-radius: 10px; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; font-size: 16px; }
+    button { background: red; color: white; border: none; cursor: pointer; }
+    .hidden { display: none; }
+  </style>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Dashboard Pengguna</h2>
+    <div id="userInfo">Memuat...</div>
+    <div id="actions" class="hidden">
+      <button onclick="toggleForm('deposit')">Deposit</button>
+      <button onclick="toggleForm('withdraw')">Withdraw</button>
+      <button id="playBtn" disabled>MAIN SEKARANG</button>
+    </div>
+    <div id="depositForm" class="hidden">
+      <h3>Form Deposit</h3>
+      <form id="depositFormElement">
+        <input type="number" name="jumlah" placeholder="Jumlah Deposit" required />
+        <button type="submit">Kirim Deposit</button>
+      </form>
+    </div>
+    <div id="withdrawForm" class="hidden">
+      <h3>Form Withdraw</h3>
+      <form id="withdrawFormElement">
+        <input type="number" name="jumlah" placeholder="Jumlah Withdraw" required />
+        <button type="submit">Kirim Withdraw</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function toggleForm(type) {
+      document.getElementById("depositForm").classList.add("hidden");
+      document.getElementById("withdrawForm").classList.add("hidden");
+      if (type === "deposit") document.getElementById("depositForm").classList.remove("hidden");
+      if (type === "withdraw") document.getElementById("withdrawForm").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
