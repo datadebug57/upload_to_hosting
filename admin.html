@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Admin</title>
+  <style>
+    body{font-family:Arial;background:#111;color:#fff;padding:20px}
+    .card{max-width:700px;margin:auto;background:#222;padding:20px;border-radius:10px}
+    table{width:100%;border-collapse:collapse;margin-top:15px}
+    th,td{border:1px solid #444;padding:8px;text-align:center}
+    input{width:80px;padding:5px;border-radius:4px;border:none;text-align:right}
+    button{padding:6px 12px;margin:4px;border:none;border-radius:4px;background:#e00;color:#fff;cursor:pointer}
+    #loginBox{max-width:300px;margin:auto}
+  </style>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="loginBox" class="card">
+    <h2>Login Admin</h2>
+    <form id="adminLoginForm">
+      <input type="text" name="adminUser" placeholder="Username admin" required><br><br>
+      <input type="password" name="adminPass" placeholder="Password admin" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="adminPanel" class="card" style="display:none">
+    <h2>Daftar User &amp; Edit Saldo</h2>
+    <table id="userTable">
+      <thead><tr><th>Username</th><th>Bank</th><th>Rekening</th><th>Nama</th><th>Saldo</th><th>Aksi</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="adminLogout()">Logout</button>
+  </div>
+</body>
+</html>
